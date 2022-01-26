@@ -1,13 +1,26 @@
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ButtonWithProps } from './components';
 import './App.css';
 
-function App() {
+const theme = createTheme({
+    shadows: ["none"],
+})
 
+function App() {
     return (
-        <ButtonWithProps
-            type="primary-default"
-            text="Bla bla"
-        />
+        <ThemeProvider theme={theme}>
+            <>
+                <ButtonWithProps
+                    type="secondary-default"
+                    text="Secondary"
+                />
+
+                <ButtonWithProps
+                    type="primary-default"
+                    text="Primary"
+                />
+            </>
+        </ThemeProvider>
     )
 }
 

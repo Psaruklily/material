@@ -1,9 +1,14 @@
 import { makeStyles } from '@mui/styles';
 
 const useSStyles = makeStyles({
-    primaryDefoult: {
+    root: {
         '&.MuiButton-root': {
             fontSize: 16,
+        }
+    },
+
+    primaryDefoult: {
+        '&.MuiButton-root': {
             background: "#CDF9F4",
             color: "#00507D",
 
@@ -15,7 +20,6 @@ const useSStyles = makeStyles({
 
     secondaryDefoult: {
         '&.MuiButton-root': {
-            fontSize: 16,
             background: "#00507D",
             color: "#ffffff",
 

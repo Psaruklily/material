@@ -5,14 +5,14 @@ import useSStyles from './styles';
 const ButtonWithProps = (props) => {
     const { text, type } = props;
     const classes = useSStyles();
+
+    const dynamicClass = type === "secondary-default" ? classes.secondaryDefoult : classes.primaryDefoult;
+    const className = `${classes.root} ${dynamicClass}`;
+
     return (
         <Button
             variant="contained"
-            className={
-                type === "secondary-default"
-                    ? classes.secondaryDefoult
-                    : classes.primaryDefoult
-            }
+            className={className}
         >
             {text}
         </Button>
@@ -20,5 +20,3 @@ const ButtonWithProps = (props) => {
 }
 
 export default ButtonWithProps;
-
-// classes.primaryDefoult
