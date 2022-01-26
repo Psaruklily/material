@@ -1,12 +1,8 @@
-import { ButtonT } from './components';
 import './App.css';
 
 function App() {
 
-    return <ButtonT
-        text="Click me"
-        variant="contained"
-    />
+    return <div>Div</div>
 }
 
 export default App;
