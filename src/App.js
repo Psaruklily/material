@@ -1,4 +1,5 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import StyledEngineProvider from '@mui/material/StyledEngineProvider';
 import { ButtonWithProps } from './components';
 import './App.css';
 
@@ -8,19 +9,21 @@ const theme = createTheme({
 
 function App() {
     return (
-        <ThemeProvider theme={theme}>
-            <>
-                <ButtonWithProps
-                    type="secondary-default"
-                    text="Secondary"
-                />
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <>
+                    <ButtonWithProps
+                        type="secondary-default"
+                        text="Secondary"
+                    />
 
-                <ButtonWithProps
-                    type="primary-default"
-                    text="Primary"
-                />
-            </>
-        </ThemeProvider>
+                    <ButtonWithProps
+                        type="primary-default"
+                        text="Primary"
+                    />
+                </>
+            </ThemeProvider>
+        </StyledEngineProvider>
     )
 }
 
