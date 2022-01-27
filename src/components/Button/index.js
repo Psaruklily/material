@@ -7,9 +7,11 @@ const ButtonWithProps = (props) => {
     const { text, type } = props;
     const classes = useSStyles();
 
-    const dynamicClass = type === "secondary-default" ? classes.secondaryDefoult : classes.primaryDefoult;
-    //const className = `${classes.root} ${dynamicClass}`;
-    const className = clsx(classes.root, dynamicClass);
+    const className = clsx({
+        [classes.root] : true,
+        [classes.primaryDefoult] : type === "primary-default",
+        [classes.secondaryDefoult] : type === "secondary-default",
+    })
 
     return (
         <Button
